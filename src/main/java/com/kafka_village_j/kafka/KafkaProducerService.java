@@ -1,6 +1,5 @@
 package com.kafka_village_j.kafka;
 
-import com.kafka_village_j.config.domain.dto.RequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
