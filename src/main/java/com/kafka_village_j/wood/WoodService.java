@@ -10,6 +10,7 @@ import com.kafka_village_j.wood.WoodRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -26,8 +27,8 @@ public class WoodService {
         return kafkaProducerService.sendMessage(CREATE_TOPIC, message.toString());
     }
 
-    public Log read(String uuid) {
-        return woodRepository.findByUuid(uuid).orElseThrow();
+    public List<Log> read(String uuid) {
+        return woodRepository.findAllByUuid(uuid).orElseThrow();
     }
 
     public Boolean update(JsonNode message) {
