@@ -17,10 +17,10 @@ public class PostgresLogController {
         return ResponseEntity.ok(ResponseDto.success(logService.create(requestDto.getMessage())));
     }
 
-//    @GetMapping
-//    public ResponseEntity<ResponseDto<?>> read(@RequestParam String uuid) {
-//        return ResponseEntity.ok(ResponseDto.success(logService.read(uuid)));
-//    }
+    @GetMapping
+    public ResponseEntity<ResponseDto<?>> read(@RequestParam(required = false) String uuid) {
+        return ResponseEntity.ok(ResponseDto.success(logService.read(uuid)));
+    }
 
     @PutMapping
     public ResponseEntity<ResponseDto<?>> update(@RequestBody RequestDto requestDto) {
