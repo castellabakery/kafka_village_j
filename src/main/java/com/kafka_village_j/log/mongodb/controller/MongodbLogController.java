@@ -1,7 +1,8 @@
-package com.kafka_village_j.log.mongodb;
+package com.kafka_village_j.log.mongodb.controller;
 
-import com.kafka_village_j.global.domain.dto.RequestDto;
+import com.kafka_village_j.kafka.dto.RequestDto;
 import com.kafka_village_j.global.domain.dto.ResponseDto;
+import com.kafka_village_j.log.mongodb.service.MongodbLogService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

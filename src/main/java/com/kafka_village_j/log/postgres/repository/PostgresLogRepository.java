@@ -1,5 +1,6 @@
-package com.kafka_village_j.log.postgres;
+package com.kafka_village_j.log.postgres.repository;
 
+import com.kafka_village_j.log.postgres.entity.Log;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

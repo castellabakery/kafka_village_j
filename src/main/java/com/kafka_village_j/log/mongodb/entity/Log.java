@@ -1,17 +1,18 @@
-package com.kafka_village_j.log.postgres;
+package com.kafka_village_j.log.mongodb.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection = "log")
 @Getter
 @Setter
 @RequiredArgsConstructor
-@Entity(name = "log")
 public class Log {
     @Id
+    private String id;
     private String uuid;
     private String name;
     private int age;

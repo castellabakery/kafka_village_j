@@ -1,7 +1,9 @@
-package com.kafka_village_j.log.postgres;
+package com.kafka_village_j.log.postgres.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.kafka_village_j.kafka.KafkaProducer;
+import com.kafka_village_j.kafka.producer.KafkaProducer;
+import com.kafka_village_j.log.postgres.entity.Log;
+import com.kafka_village_j.log.postgres.repository.PostgresLogRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

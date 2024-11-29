@@ -1,7 +1,8 @@
-package com.kafka_village_j.log.postgres;
+package com.kafka_village_j.log.postgres.controller;
 
-import com.kafka_village_j.global.domain.dto.RequestDto;
+import com.kafka_village_j.kafka.dto.RequestDto;
 import com.kafka_village_j.global.domain.dto.ResponseDto;
+import com.kafka_village_j.log.postgres.service.PostgresLogService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

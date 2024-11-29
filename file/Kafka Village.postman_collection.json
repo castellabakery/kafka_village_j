@@ -10,39 +10,13 @@
 			"name": "mongodb",
 			"item": [
 				{
-					"name": "Read",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/log/mongodb?uuid=id1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"log",
-								"mongodb"
-							],
-							"query": [
-								{
-									"key": "uuid",
-									"value": "id1"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"message\": {\r\n        \"uuid\": \"id1\",\r\n        \"name\": \"name1\",\r\n        \"age\": 10000\r\n    }\r\n}",
+							"raw": "{\r\n    \"message\": {\r\n        \"uuid\": \"test1\",\r\n        \"name\": \"name1\",\r\n        \"age\": 10000\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -65,13 +39,39 @@
 					"response": []
 				},
 				{
+					"name": "Read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/log/mongodb?uuid=test1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"log",
+								"mongodb"
+							],
+							"query": [
+								{
+									"key": "uuid",
+									"value": "test1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"message\": {\r\n        \"filter\": {\r\n            \"uuid\": \"id1\"\r\n        },\r\n        \"action\": {\r\n            \"name\": \"name2222\"\r\n        }\r\n    }\r\n}",
+							"raw": "{\r\n    \"message\": {\r\n        \"filter\": {\r\n            \"uuid\": \"test1\"\r\n        },\r\n        \"action\": {\r\n            \"name\": \"tetsetse\"\r\n        }\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -100,7 +100,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"message\": {\r\n        \"filter\": {\r\n            \"uuid\": \"id1\"\r\n        }\r\n    }\r\n}",
+							"raw": "{\r\n    \"message\": {\r\n        \"filter\": {\r\n            \"uuid\": \"test1\"\r\n        }\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -128,39 +128,13 @@
 			"name": "postgres",
 			"item": [
 				{
-					"name": "Read",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/log/postgres?uuid=id2",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"log",
-								"postgres"
-							],
-							"query": [
-								{
-									"key": "uuid",
-									"value": "id2"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"message\": {\r\n        \"uuid\": \"id1\",\r\n        \"name\": \"name1\",\r\n        \"age\": 10000\r\n    }\r\n}",
+							"raw": "{\r\n    \"message\": {\r\n        \"uuid\": \"tetsets\",\r\n        \"name\": \"name1\",\r\n        \"age\": 10000\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -183,13 +157,39 @@
 					"response": []
 				},
 				{
+					"name": "Read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/log/postgres?uuid=tetsets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"log",
+								"postgres"
+							],
+							"query": [
+								{
+									"key": "uuid",
+									"value": "tetsets"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"message\": {\r\n        \"filter\": {\r\n            \"uuid\": \"id1\"\r\n        },\r\n        \"action\": {\r\n            \"name\": \"test2\"\r\n        }\r\n    }\r\n}",
+							"raw": "{\r\n    \"message\": {\r\n        \"filter\": {\r\n            \"uuid\": \"tetsets\"\r\n        },\r\n        \"action\": {\r\n            \"name\": \"sfasefase\"\r\n        }\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -218,7 +218,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"message\": {\r\n        \"filter\": {\r\n            \"uuid\": \"id1\"\r\n        }\r\n    }\r\n}",
+							"raw": "{\r\n    \"message\": {\r\n        \"filter\": {\r\n            \"uuid\": \"tetsets\"\r\n        }\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

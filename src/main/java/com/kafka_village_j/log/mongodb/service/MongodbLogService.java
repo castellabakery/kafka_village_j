@@ -1,7 +1,9 @@
-package com.kafka_village_j.log.mongodb;
+package com.kafka_village_j.log.mongodb.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.kafka_village_j.kafka.KafkaProducer;
+import com.kafka_village_j.kafka.producer.KafkaProducer;
+import com.kafka_village_j.log.mongodb.entity.Log;
+import com.kafka_village_j.log.mongodb.repository.MongodbLogRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

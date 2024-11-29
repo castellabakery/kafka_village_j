@@ -1,4 +1,4 @@
-package com.kafka_village_j.kafka;
+package com.kafka_village_j.kafka.producer;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;

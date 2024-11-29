@@ -2,7 +2,7 @@ package com.kafka_village_j;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.kafka_village_j.log.mongodb.MongodbLogService;
+import com.kafka_village_j.log.mongodb.service.MongodbLogService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
