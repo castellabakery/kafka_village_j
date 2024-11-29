@@ -2,7 +2,7 @@ package com.kafka_village_j;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.kafka_village_j.wood.WoodService;
+import com.kafka_village_j.log.mongodb.MongodbLogService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,7 +15,7 @@ import java.util.concurrent.Executors;
 class KafkaVillageJApplicationTests {
 
     @Autowired
-    WoodService woodService;
+    MongodbLogService mongodbLogService;
 
     @Test
     void contextLoads() {
@@ -29,7 +29,7 @@ class KafkaVillageJApplicationTests {
                     "\"name\":\"name" + i + "\"," +
                     "\"age\":\"" + i + "\"" +
                     "}";
-            woodService.create(new ObjectMapper().readTree(request));
+            mongodbLogService.create(new ObjectMapper().readTree(request));
         }
     }
 
@@ -46,7 +46,7 @@ class KafkaVillageJApplicationTests {
                     "            \"age\": \"32\"" +
                     "        }" +
                     "    }";
-            woodService.update(new ObjectMapper().readTree(request));
+            mongodbLogService.update(new ObjectMapper().readTree(request));
         }
     }
 
@@ -68,7 +68,7 @@ class KafkaVillageJApplicationTests {
                         "        \"key\": \"$inc\"" +
                         "    }";
                 try {
-                    woodService.update(new ObjectMapper().readTree(request));
+                    mongodbLogService.update(new ObjectMapper().readTree(request));
                 } catch (JsonProcessingException e) {
                     throw new RuntimeException(e);
                 } finally {
@@ -88,7 +88,7 @@ class KafkaVillageJApplicationTests {
                     "\"uuid\":\"id" + i + "\"" +
                     "}" +
                     "}";
-            woodService.delete(new ObjectMapper().readTree(request));
+            mongodbLogService.delete(new ObjectMapper().readTree(request));
         }
     }
 

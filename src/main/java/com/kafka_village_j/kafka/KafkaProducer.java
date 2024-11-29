@@ -10,7 +10,7 @@ import java.util.concurrent.CompletableFuture;
 
 @Service
 @RequiredArgsConstructor
-public class KafkaProducerService {
+public class KafkaProducer {
     @Value("${spring.kafka.consumer.bootstrap-servers}")
     String bootstrapServers;
     @Value("${spring.kafka.consumer.key-deserializer}")

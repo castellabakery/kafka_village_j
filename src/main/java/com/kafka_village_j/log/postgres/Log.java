@@ -1,4 +1,4 @@
-package com.kafka_village_j.wood;
+package com.kafka_village_j.log.postgres;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 @RequiredArgsConstructor
 @Entity(name = "log")
-public class Log2 {
+public class Log {
     @Id
     private String uuid;
     private String name;

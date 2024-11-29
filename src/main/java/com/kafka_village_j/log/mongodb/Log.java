@@ -1,4 +1,4 @@
-package com.kafka_village_j.wood;
+package com.kafka_village_j.log.mongodb;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
