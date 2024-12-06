@@ -1,6 +1,9 @@
 package com.kafka_village_j.log.postgres.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.JsonNodeFactory;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.kafka_village_j.kafka.enumeration.DdlType;
 import com.kafka_village_j.kafka.producer.KafkaProducer;
 import com.kafka_village_j.log.postgres.entity.Log;
 import com.kafka_village_j.log.postgres.repository.PostgresLogRepository;
@@ -16,12 +19,10 @@ public class PostgresLogService {
     private final KafkaProducer kafkaProducer;
     private final PostgresLogRepository postgresLogRepository;
 
-    private final String CREATE_TOPIC = "CREATE_POSTGRES";
-    private final String UPDATE_TOPIC = "UPDATE_POSTGRES";
-    private final String DELETE_TOPIC = "DELETE_POSTGRES";
+    private final String TOPIC = "POSTGRES";
 
     public Boolean create(JsonNode message) {
-        return kafkaProducer.sendMessage(CREATE_TOPIC, message.toString());
+        return kafkaProducer.sendMessage(TOPIC, this.setType(message, DdlType.CREATE).toString());
     }
 
     public List<Log> read(String uuid) {
@@ -29,10 +30,17 @@ public class PostgresLogService {
     }
 
     public Boolean update(JsonNode message) {
-        return kafkaProducer.sendMessage(UPDATE_TOPIC, message.toString());
+        return kafkaProducer.sendMessage(TOPIC, this.setType(message, DdlType.UPDATE).toString());
     }
 
     public Boolean delete(JsonNode message) {
-        return kafkaProducer.sendMessage(DELETE_TOPIC, message.toString());
+        return kafkaProducer.sendMessage(TOPIC, this.setType(message, DdlType.DELETE).toString());
+    }
+
+    private ObjectNode setType(JsonNode message, DdlType ddlType) {
+        ObjectNode msg = new ObjectNode(JsonNodeFactory.instance);
+        msg.put("type", ddlType.name());
+        msg.put("message", message);
+        return msg;
     }
 }
